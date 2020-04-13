@@ -1,0 +1,5 @@
+git clone <Adresse> zum clonen eines Repositories
+cd Einheit0/ zum navigieren in das Repository
+touch Dateiname.txt zum Erstellen einer Datei
+ls zur Auflistung aller Dateien in einem Repository
+git add <Filename>
