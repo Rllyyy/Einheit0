@@ -1,12 +1,17 @@
-git clone <Adresse> 		clonen eines Repositories
-cd Einheit0/ 			navigieren in das Repository
-touch Dateiname.txt 		Erstellen einer Datei
-ls 				Auflistung aller Dateien in einem Repository
+git clone <Adresse> 			clonen eines Repositories
+git config --global user.email "Email"	
+git config --global user.name "Name"
+cd Einheit0/ 				navigieren in das Repository
+touch Dateiname.txt 			Erstellen einer Datei
+ls 					Auflistung aller Dateien in einem Repository
 git add <Filename>
 git commit -m "message"	
-git push			push auf Github
-git pull			Download von GitHub
-git log				Liste aller Commits in einem Repository
-git reset --hard <commit> 	Zurücksetzten auf den Commithash
-git reset --hard origin/master	Zurücksetzen auf Origin des Repositories
+git push				push auf Github
+git pull				Download von GitHub
+git log					Liste aller Commits in einem Repository
+git reset --hard <commit> 		Zurücksetzten auf den Commithash
+git reset --hard origin/master		Zurücksetzen auf Origin des Repositories
+start Dateiname.txt			startet eine Datei
+git config --global alias.edit "! atom"	setzt edit als alias für atom
+git edit Dateiname.html			startet Datei in Atom
 
