@@ -1,5 +1,9 @@
-git clone <Adresse> zum clonen eines Repositories
-cd Einheit0/ zum navigieren in das Repository
-touch Dateiname.txt zum Erstellen einer Datei
-ls zur Auflistung aller Dateien in einem Repository
+git clone <Adresse> 	clonen eines Repositories
+cd Einheit0/ 		navigieren in das Repository
+touch Dateiname.txt 	Erstellen einer Datei
+ls 			Auflistung aller Dateien in einem Repository
 git add <Filename>
+git commit -m "message"	
+git push		push auf Github
+git pull		Download von GitHub
+
