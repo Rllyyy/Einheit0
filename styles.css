@@ -2,3 +2,12 @@ h1 {
   color: blue;
   text-align: center;
 }
+p {
+  color: grey;
+}
+div {
+  color: blue;
+  background-color: lightgrey;
+  height: auto;
+  width: 300px;
+}
