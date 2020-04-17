@@ -5,9 +5,40 @@ h1 {
 p {
   color: grey;
 }
-div {
+#Tabelle {
   color: blue;
   background-color: lightgrey;
   height: auto;
-  width: 300px;
+  width: 400px;
+  margin: 5px;
+  padding:20px;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  border: 3px solid black;
+}
+table {
+  border: 2px solid black;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+th, td {
+  border: 1px solid black;
+  text-align: left;
+  padding: 5px;
+}
+
+th {
+background-color: lightgrey;
+}
+#bottom {
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+  margin: 10px;
+}
+
+.name {
+  font-style: italic;
 }
