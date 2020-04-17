@@ -1,17 +1,19 @@
-git clone <Adresse> 			clonen eines Repositories
+git clone <Adresse> 			Clonen eines Repositories
 git config --global user.email "Email"	
 git config --global user.name "Name"
-cd Einheit0/ 				navigieren in das Repository
+cd Einheit0/ 				Navigieren in das Repository
 touch Dateiname.txt 			Erstellen einer Datei
 ls 					Auflistung aller Dateien in einem Repository
 git add <Filename>
 git commit -m "message"	
-git push				push auf Github
+git push				Push auf Github
 git pull				Download von GitHub
 git log					Liste aller Commits in einem Repository
 git reset --hard <commit> 		Zurücksetzten auf den Commithash
 git reset --hard origin/master		Zurücksetzen auf Origin des Repositories
-start Dateiname.txt			startet eine Datei
-git config --global alias.edit "! atom"	setzt edit als alias für atom
-git edit Dateiname.html			startet Datei in Atom
+start Dateiname.txt			Startet eine Datei
+git config --global alias.edit "! atom"	Setzt edit als alias für atom
+git edit Dateiname.html			Startet Datei in Atom
+git pull --rebase			Öffnet Atom beim merge conflict, danach git add
+git rebase --continue			Zum Speichern des conflicts
 
