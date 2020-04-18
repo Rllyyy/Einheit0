@@ -16,4 +16,7 @@ git config --global alias.edit "! atom"	Setzt edit als alias für atom
 git edit Dateiname.html			Startet Datei in Atom
 git pull --rebase			Öffnet Atom beim merge conflict, danach git add
 git rebase --continue			Zum Speichern des conflicts
-
+git branch				Zeigt alle Branches 
+git branch feature			Erstellen einer neuen Branch
+git checkout feature			Switched auf anderer Branch
+	
