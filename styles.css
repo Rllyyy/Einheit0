@@ -1,11 +1,18 @@
-h1 {
-  color: blue;
+h1
+{
+  color: black;
   text-align: center;
 }
-p {
+p
+{
   color: grey;
 }
-#Tabelle {
+p::selection {
+  color:blue;
+  background-color: lightgrey;
+}
+.Tabelle
+{
   color: blue;
   background-color: lightgrey;
   height: auto;
@@ -16,29 +23,58 @@ p {
   font-size: 16px;
   font-weight: normal;
   border: 3px solid black;
+
 }
-table {
+table
+{
   border: 2px solid black;
   border-collapse: collapse;
   width: 50%;
+  font-family: Arial;
 }
 
-th, td {
+th, td
+{
   border: 1px solid black;
   text-align: left;
   padding: 5px;
 }
 
-th {
+th
+{
 background-color: lightgrey;
 }
-#bottom {
+#bottom
+{
   font-weight: bold;
   width: 100%;
   text-align: center;
   margin: 10px;
 }
 
-.name {
+.name
+{
   font-style: italic;
+}
+
+input[type=password]{
+  color: lightblue;
+}
+
+button
+{
+width: auto;
+height: auto;
+background-color: lightgrey;
+}
+button:hover {
+  background-color: lightblue;
+}
+a::before {
+  content:  "\21d2 Click: "
+}
+#BildGithub {
+  margin: 0px 15px;
+  width: 30px;
+  height: 30px;
 }
