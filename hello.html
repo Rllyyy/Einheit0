@@ -1,14 +1,19 @@
-<!Doctype HTML>
+<!Doctype html>
 <html>
     <head>
         <title>
             Meine Webseite
         </title>
         <link rel="stylesheet" href="styles.css">
+        <style>
+
+        </style>
      </head>
      <body>
-        <h1>Hello World! Hallo Welt! Ola </h1>
-        <h2>Überschriften werden mit dem Tag h+Zahl (1-6) hinzugefügt </h2>
+        <h1 id= "top">Hello World! Hallo Welt! Ola
+        <img align="right" id="BildGithub" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png">
+      </h1>
+        <h3>Überschriften werden mit dem Tag h+Zahl (1-6) hinzugefügt </h2>
         Eine Liste mit Bulletpoints:
         <ul>
           <li>Wird mit den Tag ul (unordered list) initiiert</li>
@@ -21,9 +26,9 @@
         </ol>
         Bilder hinzufügen:
         <ul>
-          <li>Bilder werden mit dem Tag img src = "String" hinzufüget</li>
+          <li>Bilder werden mit dem Tag git img src = "String" hinzufüget</li>
           <li>Im Image Tag können weitere Attribute angegeben werden (height/width)</li>
-          <li> <img height="60px" width="60px" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png"></li>
+
         </ul>
         Tabellen:
         <table>
@@ -55,14 +60,22 @@
           <li>button: wird mit dem Button Tag aufgerufen</li>
         </ul>
         <form>
-          <input type="text" placeholder="Platzhalter" name="Input1">
-          <button type="button1" name="button">Verstanden</button>
+          <input type="text" placeholder="Name" name="Form.Name">
+          <input type="password" placeholder="Passwort" name="Form.Password"  >
+          <input name="Form.Country" list="countries" placeholder="Country">
+          <datalist id= "countries">
+            <option value="England"></option>
+            <option value="Germany"></option>
+            <option value="Lichtenstein"></option>
+
+          </datalist>
+          <button type="button" name="Form.Button">Verstanden</button>
         </form>
         <p>
         Im Header können Definitionen für z.B. alle h1 angelegt werden
         oder man verlinkt diese im Header
         </p>
-      <div id="Tabelle">
+      <div class="Tabelle">
         CSS Befehle:
         <ul>
           <li>color</li>
@@ -75,8 +88,44 @@
           <li>Border mit px und Umrandung</li>
         </ul>
       </div>
+      <div>
+        <table>
+          <tr>
+            <th>CSS Selectors</th>
+            <th>Auswirkung</th>
+          </tr>
+          <tr>
+              <td>a, b</td>
+              <td>Multiple Element Selector</td>
+          </tr>
+          <tr>
+              <td>a b</td>
+              <td>Descendant Selector</td>
+          </tr>
+          <tr>
+              <td>a > b</td>
+              <td>Child Selector</td>
+          </tr>
+          <tr>
+              <td>a + b</td>
+              <td>Adjacent Sibling Selector</td>
+          </tr>
+          <tr>
+              <td>[a=b]</td>
+              <td>Attribute Selector</td>
+          </tr>
+          <tr>
+              <td>a:b</td>
+              <td>Pseudoclass Selector</td>
+          </tr>
+          <tr>
+              <td>a::b</td>
+              <td>Pseudoelement Selector</td>
+          </tr>
+        </table>
+      </div>
       <div id="bottom">
-        This is the <span class="name">bottom</span> of my web page. Seite 1
+        This is the <span class="name">bottom</span> of my web page. <a href="#top">Go to top</a>
       </div>
      </body>
 </html>
