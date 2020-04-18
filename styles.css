@@ -1,8 +1,4 @@
-h1
-{
-  color: black;
-  text-align: center;
-}
+
 p
 {
   color: grey;
@@ -77,4 +73,25 @@ a::before {
   margin: 0px 15px;
   width: 30px;
   height: 30px;
+}
+@media print {
+  .screen-only {
+  display: none;}
+
+}
+@media (min-width: 800px) {
+  body {
+  background-color:white;
+  }
+  h1::after {
+    content: "Desktop-User"
+  }
+}
+@media (max-width: 799px) {
+  body {
+  background-color:lightblue;
+  }
+  h1::after {
+    content: "Mobile-User"
+  }
 }
