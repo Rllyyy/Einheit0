@@ -19,4 +19,7 @@ git rebase --continue			Zum Speichern des conflicts
 git branch				Zeigt alle Branches 
 git branch feature			Erstellen einer neuen Branch
 git checkout feature			Switched auf anderer Branch
-	
+git push --set-upstream origin feature	Pushed feature nach Github
+git merge feature			Mergen von Feature und Master, während man auf Master ist
+rm -rf Einheit0				Löscht ein Repository
+
