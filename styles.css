@@ -37,10 +37,7 @@ th, td
   padding: 5px;
 }
 
-th
-{
-background-color: lightgrey;
-}
+
 #bottom
 {
   font-weight: bold;
@@ -120,4 +117,13 @@ a::before {
 background-color: white;
 font-size: 20px;
 text-align: center;
+}
+.row > div {
+  padding: 20px;
+  background-color: teal;
+  border: 2px solid black;
+  margin:5px;
+}
+.container1 > div {
+  margin: 20px;
 }
