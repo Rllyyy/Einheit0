@@ -138,8 +138,9 @@ const aurora = new Character("Aurora", 150, 25);
 aurora.xp += 15;
 console.log(aurora.describe()); 
 */
-const hello= 3;
+
 //----------------------------------Objects in an Array-------------------------------------------//
+/*
 const movieList = [
   {
     title: "Batman",
@@ -225,7 +226,58 @@ function NolanAverage() {
   });
   console.log(total/moviesOfChristopher);
 }
+*/
 
-//---------------------------------Array Operations ---------------------------//
+//---------------------------------Array Operations: map, filter and reduce ---------------------------//
+/*
+const numbers = [1,5,6.15,30,8,16];
+//Map-Method takes an array as a parameter and creates a new array with the results of calling a provided function on every element in this array. A typical use of map() is to replace a loop for array traversal.
+//Dobule every element in the array
+const doubles = numbers.map(x => x * 2);
+console.log(doubles);               //returns double numbers as an array
 
+//Filter-Method offers a way to test every element of an array against a provided function. Only elements that pass this test are added to the returned array.
+//Get numbers that are even
+const even = numbers.filter(x => x%2 === 0);
+console.log(even);                  //prints numbers as an array
+//even.forEach(i => console.log(i));  //prints every element of the array
 
+//Combine filter() and map()
+const evenDouble = numbers.filter(x => x%2 === 0).map(x => x * 2);
+console.log(evenDouble);
+
+//Reduce-Method applies a provided function to each array element in order to reduce it to one value.
+//It takes two parameters: the first is an accumulator which contains the accumulated value previously returned by the last invocation of the function. 
+//The other function parameter is the array element. 
+//The last parameter is the initial value of the accumulator (often 0)
+const sum = numbers.reduce((acc, value) => acc + value,0);
+console.log(sum);
+
+const students = [
+  {
+    name: "Anna", gender: "f", grades: [4.5, 3.5, 4]
+  },
+  {
+    name: "Dennis",gender: "m", country: "Germany", grades: [5, 1.5, 4]
+  },
+  {
+    name: "Martha", sex: "f", grades: [5, 4, 2.5, 3]
+  },
+  {
+    name: "Brock", gender: "m", grades: [4, 3, 2]
+  }
+];
+
+//get all objects that have the gender f
+const femaleStudents = students.filter(obj => {
+  return obj.gender === "f";
+});
+
+console.log(femaleStudents);
+
+const array = [7,9,20,3,2,100,40];
+
+//Sort an array
+let arraySorted= array.sort(function(a, b){return a-b});
+console.log(arraySorted);
+*/
