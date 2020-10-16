@@ -94,6 +94,7 @@ vowels("fly");
 vowels("PeterPan");
 function vowels(word){
   let i = 0;
+  // Create an array from the string
   const wordArray = Array.from(word);
 
   wordArray.forEach(vowel => {
@@ -281,3 +282,61 @@ const array = [7,9,20,3,2,100,40];
 let arraySorted= array.sort(function(a, b){return a-b});
 console.log(arraySorted);
 */
+//-----------------------------------DOM----------------------------------------------//
+//not working because there is no html document
+//Selecting Elements
+//Selecting Elements by tag name
+const titleElements = document.getElementsByTagName("h2");
+console.log(titleElements[0].innerHTML); //select the first element in the array
+console.log(titleElements.length); //count how many items are in the array of title elements
+
+//Selecting Items According to Class
+const existingElements = Array.from(document.getElementsByClassName("exists")); // Show all elements that have the class "exists"
+existingElements.forEach(element => {
+  console.log(element.innerHTML);
+});
+
+//Selecting an Item According to its ID
+console.log(document.getElementById("new").innerHTML);
+
+//Combine id and classes
+console.log(document.getElementById("ancient").getElementsByClassName("exists").length);
+
+//CSS Selectors
+// All paragraphs
+console.log(document.querySelectorAll("p").length); // 3
+//print all text of all paragraphs
+const p = Array.from(document.querySelectorAll("p"));
+p.forEach(element => {
+    console.log(element.innerHTML);
+})
+// All paragraphs inside the "content" ID block
+console.log(document.querySelectorAll("#content p").length); // 2
+// All elements with the "exists" class
+console.log(document.querySelectorAll(".exists").length); // 8
+// All "ancient" wonders that still exist
+console.log(document.querySelectorAll("#ancient > .exists").length); // 1
+//Only show the first paragraph
+console.log(document.querySelector("p").innerHTML); //has no "All", so only the first item is returned
+
+//-------------------Obtaining Information about Elements ------------------------//
+//HTML-Content
+console.log(document.getElementById("content").innerHTML);
+//The textContent property returns all the text content of a DOM element, without any HTML markup.
+console.log(document.getElementById("content").textContent);
+//The getAttribute() method can be applied to a DOM element and will return the value of a given attribute.
+console.log(document.querySelector("a").getAttribute("href"));
+console.log(document.querySelector("a").href); //works with id, href, and value attributes.
+//Check if the element has an attribute:
+if (document.querySelector("a").hasAttribute("target")) {
+  console.log("The first link has a target attribute.");
+} else {
+  console.log("The first link does not have a target attribute."); // Will be shown
+}
+//Classes: classList property retrieves a DOM element’s list of classes
+const classes = document.getElementById("ancient").classList;
+console.log(classes.length); // 1 (since the element only has one class)
+console.log(classes[0]);     // "wonders"
+//Check whether "ancient" element contains the "wonders" class
+console.log(document.getElementById("ancient").classList.contains("wonders"));
+
