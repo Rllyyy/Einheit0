@@ -114,7 +114,7 @@ a::before {
   grid-template-columns: 250px 250px auto;
 }
 .grid-item  {
-background-color: white;
+background-color: green;
 font-size: 20px;
 text-align: center;
 }
