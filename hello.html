@@ -4,7 +4,7 @@
         <title>
             Meine Webseite
         </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
           <link rel="stylesheet" href="styles.css">
           <link rel="stylesheet" href="variables.css">
           <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -12,8 +12,8 @@
 
         </style>
      </head>
-     <body>
-        <h1 id= "top">Hello World!
+     <body id = "content">
+      <h1 id= "top">Hello World!
         <img align="right" id="BildGithub" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png">
       </h1>
         <h3>Überschriften werden mit dem Tag h+Zahl (1-6) hinzugefügt </h2>
@@ -89,37 +89,37 @@
         </ul>
       </div>
       <div>
-        <table>
+        <table id = "table">
           <tr>
             <th>CSS Selectors</th>
             <th>Auswirkung</th>
           </tr>
           <tr>
-              <td>a, b</td>
+              <td class = "selector">a, b</td>
               <td>Multiple Element Selector</td>
           </tr>
           <tr>
-              <td>a b</td>
+              <td class = "selector">a b</td>
               <td>Descendant Selector</td>
           </tr>
           <tr>
-              <td>a > b</td>
+              <td class = "selector">a > b</td>
               <td>Child Selector</td>
           </tr>
           <tr>
-              <td>a + b</td>
+              <td class = "selector">a + b</td>
               <td>Adjacent Sibling Selector</td>
           </tr>
           <tr>
-              <td>[a=b]</td>
+              <td class = "selector">[a=b]</td>
               <td>Attribute Selector</td>
           </tr>
           <tr>
-              <td>a:b</td>
+              <td class = "selector">a:b</td>
               <td>Pseudoclass Selector</td>
           </tr>
           <tr>
-              <td>a::b</td>
+              <td class = "selector">a::b</td>
               <td>Pseudoelement Selector</td>
           </tr>
         </table>
@@ -163,6 +163,6 @@
       <div id="bottom">
         This is the <span class="name">bottom</span> of my web page. <a href="#top">Go to top</a>
       </div>
-
+      <script src="JavaScriptBasics.js"></script>
      </body>
 </html>
