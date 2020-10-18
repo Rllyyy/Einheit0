@@ -124,6 +124,21 @@ const sBigger = a.forEach(word => console.log(word.toUpperCase()));
 */
 //-----------------------------------Classes/Objects------------------------------------------------//
 /*
+const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 30,
+  hobbies: ["music", "movies", "football"],
+  address: {
+    street: "Hauptstraße 5",
+    city: "Berlin",
+    county: "Germany",
+  }
+}
+person.email = "example@expl.com"
+console.log(`${person.firstName} ${person.lastName} (${person.age}) lives in ${person.address.city}.\n His e-mail is ${person.email}`); //get the city of the person
+console.log(person.hobbies[1]);
+
 class Character {
   constructor(name, health, strength) {
     this.name = name;
@@ -345,4 +360,27 @@ console.log(classes.length); // 1 (since the element only has one class)
 console.log(classes[0]);     // "wonders"
 //Check whether "table" element contains the "wonders" class
 console.log(document.getElementById("table").classList.contains("test"));
+*/
+//---------------------------- Convert an array to JSON ----------------------------------------//
+/*
+const todos = [
+  {
+    id: 1,
+    text: "Clean the kitchen",
+    isCompleted: true
+  },
+  {
+    id: 2,
+    text: "Take out te trash",
+    isCompleted: true
+  },
+  {
+    id: 3,
+    text: "Drive to dentist",
+    isCompleted: false
+  }
+];
+
+const todoJSON = JSON.stringify(todos);
+console.log(todoJSON);
 */
