@@ -1,5 +1,5 @@
 //This file is just for testing JavaScript
-//Last edited: 10.10.2020
+//Last edited: 18.10.2020
 //Functioning programs are in between comments
 //Functions can be activated by removing the comments
 
@@ -31,9 +31,7 @@ console.log(helloAnonymous('Peter', 16))
 //anonymous functions with only one parameter. Parentheses can be omitted
 const helloSingle = name => `Hello, ${name}!`;
 console.log(helloSingle("Kate"));
-
 */
-
 
 //------------------Iterating over an Array with for, for each and for-of loops ------------------------------//
 /*
@@ -70,7 +68,6 @@ gamesList.forEach(game => {
 //------------------------------------Iterating over a String--------------------------------//
 /*
 const name = "Sarah"; // 5 characters
-
 console.log(name[0]);
 console.log(name[1]);
 console.log(name[2]);
@@ -87,7 +84,6 @@ for (let i=0; i < name.length; i++)
 for(const letter of name) {
   console.log(letter);
 }
-
 
 //Converting a string to an array and iterating of it
 vowels("fly");
@@ -118,8 +114,14 @@ function reverse(word) {
   return reverseWord;
 }
 */
-
-
+//-----------------------------------Strings--------------------------------------------------------//
+/*
+//Splitting a string into an array
+const s = "technologies, computes, it, code, data";
+//console.log(s.split(", "));
+const a = s.split(", ");
+const sBigger = a.forEach(word => console.log(word.toUpperCase()));
+*/
 //-----------------------------------Classes/Objects------------------------------------------------//
 /*
 class Character {
@@ -226,7 +228,7 @@ function NolanAverage() {
 */
 
 //---------------------------------Array Operations: map, filter, reduce and ---------------------------//
-
+/*
 const numbers = [1, 5, 6.15, 30, 8, 16, 7, 9, 20, 3, 2, 100, 40];
 //Map-Method takes an array as a parameter and creates a new array with the results of calling a provided function on every element in this array. A typical use of map() is to replace a loop for array traversal.
 //Double every element in the array
@@ -282,6 +284,7 @@ console.log(arraySorted);
 //Sort students by starting year with ternary operators (? = true; : = else)
 const studentsSortedByStartingYear = students.sort((a, b) => (a.startYear > b.startYear ? 1 : -1));
 console.log(studentsSortedByStartingYear);
+*/
 //-----------------------------------DOM----------------------------------------------//
 /*
 //not working because there is no html document
