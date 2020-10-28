@@ -22,10 +22,8 @@ console.log(hello('Niklas'));
 
 //anonymous functions, fat arrow functions
 //The return statement is omitted and implicit.
-const helloAnonymous = (name, age) => {
-    return message = `Hello, ${name} you are ${age} years old!`;
-  };
-console.log(helloAnonymous('Peter', 16))
+const helloAnonymous = (name, age) => console.log(`Hello, ${name} you are ${age} years old!`);
+helloAnonymous("Niklas", 17);
 //Alternative: const helloAnonymous = (name, age) => `Hello, ${name} you are ${age} years old!`;
 
 //anonymous functions with only one parameter. Parentheses can be omitted
@@ -123,7 +121,7 @@ const a = s.split(", ");
 const sBigger = a.forEach(word => console.log(word.toUpperCase()));
 */
 //-----------------------------------Classes/Objects------------------------------------------------//
-/*
+
 const person = {
   firstName: "John",
   lastName: "Doe",
@@ -136,9 +134,32 @@ const person = {
   }
 }
 person.email = "example@expl.com"
-console.log(`${person.firstName} ${person.lastName} (${person.age}) lives in ${person.address.city}.\n His e-mail is ${person.email}`); //get the city of the person
-console.log(person.hobbies[1]);
+//console.log(`${person.firstName} ${person.lastName} (${person.age}) lives in ${person.address.city}.\n His e-mail is ${person.email}`); //get the city of the person
+//console.log(person.hobbies[1]);
 
+//Constructor function (old wy)
+function Resident(firstName, lastName, dob) {
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.dob = new Date(dob);
+  this.getBirthYear = function () {
+    return this.dob.getFullYear();
+  }
+}
+//Instantiate object
+const resident1 = new Resident("Niklas", "Fischer", "4-20-2020");
+const resident2 = new Resident("Max", "Musterfrau", "5-3-2010");
+//console.log(resident1);
+//console.log(resident2.lastName);
+//console.log(resident2.getBirthYear());
+
+//Prototypes if a method or property should only be applied to one instance of the object
+Resident.prototype.getFullName = function () {
+  return `${this.firstName} ${this.lastName}`;
+}
+console.log(resident1.getFullName());
+
+//"Classes"
 class Character {
   constructor(name, health, strength) {
     this.name = name;
@@ -154,8 +175,8 @@ class Character {
 }
 const aurora = new Character("Aurora", 150, 25);
 aurora.xp += 15;
-console.log(aurora.describe());
-*/
+//console.log(aurora.describe());
+
 
 //----------------------------------Objects in an Array-------------------------------------------//
 /*
@@ -384,3 +405,4 @@ const todos = [
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 */
+
