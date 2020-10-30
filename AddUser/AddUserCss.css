@@ -10,6 +10,7 @@ body {
 }
 h1 {
   text-align: center;
+  width: 100%;
 }
 
 ul {
@@ -25,12 +26,13 @@ ul li {
 header {
   background: #f4f4f4;
   padding: 1rem;
+  width: 100%;
   text-align: center;
 }
 
 .container {
   margin: auto;
-  width: 500px;
+  max-width: 500px;
   overflow: auto;
   padding: 3rem 2rem;
 }
@@ -53,6 +55,7 @@ header {
 }
 
 .btn {
+  cursor: pointer;
   display: block;
   width: 100%;
   padding: 10px 15px;
@@ -73,7 +76,7 @@ header {
 }
 
 .error {
-  color: #dc143c;
+  color: #ff0033;
   text-align: center;
   font-weight: bold;
 }
