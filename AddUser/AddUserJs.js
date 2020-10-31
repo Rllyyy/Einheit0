@@ -22,7 +22,7 @@ ul.lastElementChild.innerHTML = "<h2>This text was made into an h1 by js </h2>";
 
 //Add  click event to the button to take the name and email and put it into the list
 const btn = document.querySelector(".btn");
-btn.addEventListener("click", function(e) {
+btn.addEventListener("click", function (e) {
     //prevent the site from refreshing because of the submit element
     e.preventDefault();
 
@@ -33,7 +33,7 @@ btn.addEventListener("click", function(e) {
     let incomplete = false;
 
     const msg = document.querySelector(".msg");
-    if(nameText.value === "") {
+    if (nameText.value === "") {
 
         //Set incomplete to true if an Error is caught
         incomplete = true;
@@ -42,8 +42,8 @@ btn.addEventListener("click", function(e) {
         nameText.style.background = "#ff0033";
 
         //set the appearance to 3 seconds
-        setTimeout(()=> {nameText.style.background = "white";},3000);
-    } 
+        setTimeout(() => { nameText.style.background = "white"; }, 3000);
+    }
     if (emailText.value === "") {
 
         //Set incomplete to true if an Error is caught
@@ -57,7 +57,7 @@ btn.addEventListener("click", function(e) {
         }, 3000);
     }
 
-    if(!incomplete && validateEmail(emailText)){
+    if (!incomplete && validateEmail(emailText)) {
         //Create an list list element and append it to the existing userList
         const li = document.createElement("li");
         li.appendChild(document.createTextNode(`${nameText.value} : ${emailText.value}`));
@@ -72,7 +72,7 @@ btn.addEventListener("click", function(e) {
             msg.remove();
         } catch (error) {
         }
-        
+
         //Set border color from red to grey
         emailText.style.borderColor = "#ccc";
     } else {
@@ -86,8 +86,7 @@ btn.addEventListener("click", function(e) {
 
 function validateEmail(emailText) {
     //Check if input is an email. Source: https://www.w3resource.com/javascript/form/email-validation.php
-    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(emailText.value))
-    {
+    if (/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(emailText.value)) {
         return (true);
     }
 

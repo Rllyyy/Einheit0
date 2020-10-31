@@ -121,7 +121,7 @@ const a = s.split(", ");
 const sBigger = a.forEach(word => console.log(word.toUpperCase()));
 */
 //-----------------------------------Classes/Objects------------------------------------------------//
-
+/*
 const person = {
   firstName: "John",
   lastName: "Doe",
@@ -137,7 +137,7 @@ person.email = "example@expl.com"
 //console.log(`${person.firstName} ${person.lastName} (${person.age}) lives in ${person.address.city}.\n His e-mail is ${person.email}`); //get the city of the person
 //console.log(person.hobbies[1]);
 
-//Constructor function (old wy)
+//Constructor function (old way ES5)
 function Resident(firstName, lastName, dob) {
   this.firstName = firstName;
   this.lastName = lastName;
@@ -159,7 +159,7 @@ Resident.prototype.getFullName = function () {
 }
 console.log(resident1.getFullName());
 
-//"Classes"
+//"Classes" (ES6)
 class Character {
   constructor(name, health, strength) {
     this.name = name;
@@ -172,12 +172,42 @@ class Character {
     return `${this.name} has ${this.health} health points, ${this
       .strength} as strength and ${this.xp} XP points`;
   }
+
+  rename(newName) {
+    this.name = newName;
+  }
+
+  //static methods can used without instantiating an object
+  static Example() {
+    return "This static method can only be used on the class character not on the object"
+  }
 }
 const aurora = new Character("Aurora", 150, 25);
 aurora.xp += 15;
+aurora.rename("Petra");
+console.log(aurora.describe());
+console.log(Character.Example());
 //console.log(aurora.describe());
 
+//Subclass
+class Hero extends Character {
+  constructor(name, health, strength, sword) {
+    super(name, health, strength);
+    this.sword = sword;
+  }
 
+  //Override the method describe to also include a sword
+  describe() {
+    return `${this.name} has ${this.health} health points, ${this
+      .strength} as strength and ${this.xp} XP points. He uses a ${this.sword}`;
+  }
+}
+
+const hero1 = new Hero("Peter", 2000, 100, "Golden Sword");
+hero1.rename("Peter2"); //Use the method from the parent on the extended class
+console.log(hero1.describe());
+
+*/
 //----------------------------------Objects in an Array-------------------------------------------//
 /*
 const movieList = [
