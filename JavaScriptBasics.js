@@ -436,3 +436,47 @@ const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
 */
 
+//---------------------------------Modifying page structure: Modify an existing element------------------------//
+document.querySelector(".container").innerHTML +='<div>This container was added by js</div>'
+//XSS vulnerability which allows the execution of client side javascript
+//document.querySelector(".container").innerHTML +="<script>" + alert("Hello"); + "</script>"
+document.querySelector(".container").innerHTML +="<script>" + console.log("XSS vulnerability detected"); + "</script>"
+
+//Attributes. Select the first h3 element and set the id attribute to title
+document.querySelector("h3").setAttribute("id","title");
+document.querySelector("h1").id = "Heading";
+
+//Remove the className container1 from the div and add the ClassName UserMessage
+const titleElement = document.querySelector(".container1");
+titleElement.classList.remove("container1");
+titleElement.classList.add("UserMessage");
+console.log(titleElement);
+
+//---------------------------------Modifying page structure: Adding a new Element--------------------------------//
+const ULByJS = document.createElement("li");
+ULByJS.textContent = "linear gradients (This was added by js)";
+ULByJS.id = "js";
+document.querySelector("#cssList").appendChild(ULByJS);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
