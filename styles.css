@@ -1,28 +1,23 @@
-
-p
-{
+p {
   color: grey;
 }
 p::selection {
-  color:blue;
+  color: blue;
   background-color: lightgrey;
 }
-.Tabelle
-{
+.Tabelle {
   color: blue;
   background-color: lightgrey;
   height: auto;
   width: 400px;
   margin: 5px;
-  padding:5px;
+  padding: 5px;
   font-family: Arial, sans-serif;
   font-size: 16px;
   font-weight: normal;
   border: 3px solid black;
-
 }
-table
-{
+table {
   border: 2px solid black;
   border-collapse: collapse;
   width: 400px;
@@ -30,42 +25,38 @@ table
   margin: 5px;
 }
 
-th, td
-{
+th,
+td {
   border: 1px solid black;
   text-align: left;
   padding: 5px;
 }
 
-
-#bottom
-{
+#bottom {
   font-weight: bold;
   width: 100%;
   text-align: center;
   margin: 10px;
 }
 
-.name
-{
+.name {
   font-style: italic;
 }
 
-input[type=password]{
+input[type='password'] {
   color: lightblue;
 }
 
-button
-{
-width: auto;
-height: auto;
-background-color: lightgrey;
+button {
+  width: auto;
+  height: auto;
+  background-color: lightgrey;
 }
 button:hover {
   background-color: lightblue;
 }
 a::before {
-  content:  "\21d2 Click: "
+  content: '\21d2 ';
 }
 #BildGithub {
   margin: 0px 15px;
@@ -74,29 +65,28 @@ a::before {
 }
 @media print {
   .screen-only {
-  display: none;}
-
+    display: none;
+  }
 }
 @media (min-width: 800px) {
   body {
-  background-color:white;
+    background-color: white;
   }
   h1::after {
-    content: "Desktop-User"
+    content: 'Desktop-User';
   }
 }
 @media (max-width: 799px) {
   body {
-  background-color:lightblue;
+    background-color: lightblue;
   }
   h1::after {
-    content: "Mobile-User"
-
+    content: 'Mobile-User';
   }
 }
 .container {
   display: flex;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
 }
 .container > div {
   background-color: lightgreen;
@@ -113,16 +103,16 @@ a::before {
   grid-row-gap: 10px;
   grid-template-columns: 250px 250px auto;
 }
-.grid-item  {
-background-color: green;
-font-size: 20px;
-text-align: center;
+.grid-item {
+  background-color: green;
+  font-size: 20px;
+  text-align: center;
 }
 .row > div {
   padding: 20px;
   background-color: teal;
   border: 2px solid black;
-  margin:5px;
+  margin: 5px;
 }
 .container1 > div {
   margin: 20px;

@@ -458,6 +458,64 @@ ULByJS.textContent = "linear gradients (This was added by js)";
 ULByJS.id = "js";
 document.querySelector("#cssList").appendChild(ULByJS);
 
+//---------------------------------Variations on Adding elements--------------------------------------------------//
+//Adding a Textual Node (createTextNode) instead of changing the textContent property (like above)
+const rubyElement = document.createElement("li");
+rubyElement.appendChild(document.createTextNode("Ruby"));
+document.getElementById("cssList").appendChild(rubyElement);
+//remove the element of a list
+const list = document.getElementById("cssList");
+const listItems = list.getElementsByTagName("li");
+let lastItem = listItems[listItems.length-1];
+list.removeChild(lastItem);
+//or rubyElement.remove()
+
+//Adding a Node Before another one
+const itemInBetween = document.createElement("li");
+itemInBetween.id = "itemInBetween";
+itemInBetween.appendChild(document.createTextNode("This item was but into the list by JavaScript"));
+document.querySelector("#cssList").insertBefore(itemInBetween, document.querySelector("#height"));
+//itemInBetween.remove(); //remove the item, not needed because it's later replaced in "Replacing or Removing nodes"
+
+//Determining the Exact Position of the New Node
+//beforebegin: before the existing element
+//afterbegin: inside the existing element, before its first child
+//beforeend: inside the existing element, after its last child
+//afterend: after the existing element
+let insertedHTML = document.querySelector("#cssList").insertAdjacentHTML("afterBegin", '<li id="javascript">This HTML was added by JS</li>');
+document.querySelector("#javascript").remove(); //remove it
+
+//Adding text with a link
+const paragraphElement = document.createElement("p");
+const linkElement = document.createElement("a");
+linkElement.id = "linkToAllLanguages";
+linkElement.href = "https://en.wikipedia.org/wiki/List_of_programming_languages";
+linkElement.text = "list";
+paragraphElement.appendChild(document.createTextNode("Here is a more complete "));
+paragraphElement.appendChild(linkElement);
+paragraphElement.appendChild(document.createTextNode(" of languages."));
+document.querySelector("#contentList").appendChild(paragraphElement);
+
+
+//-----------------------------------------Replacing or Removing nodes------------------------//
+//Replacing a Node
+const textAlign = document.createElement("li");
+textAlign.id = "textAlign";
+textAlign.appendChild(document.createTextNode("text-align (replaced by js)"));
+document.querySelector("#cssList").replaceChild(textAlign, document.getElementById("itemInBetween"));
+
+//Removing a Node
+//document.querySelector("#cssList").removeChild(document.querySelector("#textAlign"));
+
+//----------------------------------------Styling Elements-----------------------------------//
+const forms = document.querySelector("#forms");
+forms.style.color = "grey";
+forms.style.textDecoration = "underline";
+
+//Access Element Styles
+console.log(getComputedStyle(forms).color);
+
+
 
 
 
