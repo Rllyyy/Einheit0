@@ -496,8 +496,7 @@ paragraphElement.appendChild(linkElement);
 paragraphElement.appendChild(document.createTextNode(" of languages."));
 document.querySelector("#contentList").appendChild(paragraphElement);
 
-
-//-----------------------------------------Replacing or Removing nodes------------------------//
+//-----------------------------------------Replacing or Removing nodes-------------------------------------------------------//
 //Replacing a Node
 const textAlign = document.createElement("li");
 textAlign.id = "textAlign";
@@ -507,7 +506,7 @@ document.querySelector("#cssList").replaceChild(textAlign, document.getElementBy
 //Removing a Node
 //document.querySelector("#cssList").removeChild(document.querySelector("#textAlign"));
 
-//----------------------------------------Styling Elements-----------------------------------//
+//----------------------------------------Styling Elements-------------------------------------------------------------------//
 const forms = document.querySelector("#forms");
 forms.style.color = "grey";
 forms.style.textDecoration = "underline";
@@ -515,8 +514,113 @@ forms.style.textDecoration = "underline";
 //Access Element Styles
 console.log(getComputedStyle(forms).color);
 
+//-----------------------------------------The Event Family------------------------------------------------------------------//
+document.querySelector("#myButton").addEventListener("click", e => {
+  console.log(`Event type: ${e.type}, target: ${e.target}, time: ${e.timeStamp}`);
+});
 
+//------------------------------------------Reacting to Keyboard Events (keydown, keypress and keyup)------------------------//
+//Show the pressed character
+document.addEventListener("keypress", e => {
+  //console.log(`You pressed the ${e.key} key`);
+});
 
+//Show information on a keyboard event
+const keyboardInfo = e => {
+  console.log(`Keyboard event: ${e.type}, key: ${e.key}`);
+};
+document.addEventListener("keydown", keyboardInfo);
+document.addEventListener("keyup", keyboardInfo);
+
+//Keypress task to switch background color
+let allDivs = document.querySelectorAll("div");
+let backgroundColor = "white";
+document.addEventListener("keypress", e => {
+    let key = e.key;
+    key = key.toLowerCase();
+    switch (key) {
+        case "r":
+            test("red");
+            break;
+        case "y":
+            test("yellow");
+            break;
+        case "g":
+            test("green");
+            break;
+        case "b":
+            test("blue");
+            break;
+        default:
+            console.log("This key can't change the backgroud color");
+    }
+});
+
+const test = (backgroundColor) => allDivs.forEach(div => {
+    div.style.backgroundColor = backgroundColor;
+});
+
+//--------------------------------------------Reacting to Mouse Events------------------------------------------------------//
+const mouseInfo = e => {
+  //console.log(`Mouse event: ${e.type}, button: ${getMouseButton(e.button)}, X (client): ${e.clientX}, Y (client): ${e.clientY}, X (page): ${e.pageX}, Y (page) ${e.pageY}`);
+};
+const getMouseButton = function (MouseButton) {
+  let button = "";
+  switch (MouseButton) {
+    case 0:
+      button = "left";
+      break;
+    case 1:
+      button = "middle";
+      break;
+    case 2:
+      button = "right";
+      break;
+  }
+  console.log(button);
+  return button;
+};
+document.addEventListener("click", mouseInfo);
+
+//Mousedown and mouseup can be used the same as keydown and keyup
+document.addEventListener("mousedown", e => {
+  //console.log("mouse went down");
+});
+
+//-----------------------------------------------Reacting to Page Events-----------------------------------------------------//
+//Page Loading
+window.addEventListener("load", e =>{
+  console.log("The page has been loaded!");
+});
+
+//Page Closing
+//window.addEventListener("beforeunload", e => {
+  //const message = "Should you stay or should you go?";
+  //e.returnValue = message;
+  //return message;
+//});
+
+//-----------------------------------------------Cancelling the Default Behavior of an Action---------------------------------//
+document.querySelector("#myButton").addEventListener("click", e => {
+  //alert("Yes... But no.")
+  e.preventDefault();
+});
+
+//-----------------------------------------------Remove the eventListener-----------------------------------------------------//
+let countClick = 0;
+//Anonymous fat arrow function
+const addCount = () =>{
+    countClick = countClick + 1;
+    updateCountClick();
+}
+function updateCountClick(){
+    document.querySelector("#clickCount").innerText = countClick;
+}
+document.querySelector("#myButton").addEventListener("click", addCount);
+
+document.querySelector("#deactivate").addEventListener("click", () => {
+    document.querySelector("#myButton").removeEventListener("click", addCount);
+});
 
 
 
