@@ -30,15 +30,18 @@
               <label for="confirmation">Send me a confirmation email</label>
             </p>
             <p>
-              <input type="radio" name="subscription" id="newsroom" value="newspromo">
-              <label for="newsroom">Subscribe me to newsletters and promotions</label>
-              <br>
-              <input type="radio" name="subscription" id="news" value="news">
-              <label for="news">Subscribe me only to the newsletter</label>
-              <br>
-              <input type="radio" name="subscription" id="no" value="no" checked>
-              <label for="no">No subscriptions</label>
-              <br>
+              <span>
+                <input type="radio" name="subscription" id="newsroom" value="newspromo">
+                <label for="newsroom">Subscribe me to newsletters and promotions</label>
+              </span>
+              <span>
+                <input type="radio" name="subscription" id="news" value="news">
+                <label for="news">Subscribe me only to the newsletter</label>
+              </span>
+              <span>
+                <input type="radio" name="subscription" id="no" value="no" checked>
+                <label for="no">No subscriptions</label>
+              </span>
             </p>
             <p>
               <label for="nationality">Nationality</label>:
@@ -52,7 +55,8 @@
             </p>
             <textarea name="" id="" cols="45" rows="10" placeholder="Notes - This is a textarea"></textarea>
             <div id="submitCancel">
-                <input type="submit" value="Submit">
+
+                <input id="submit" type="submit" value="Submit">
                 <input type="reset" value="Cancel">
             </div>
         </form>
