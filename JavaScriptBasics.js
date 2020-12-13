@@ -622,9 +622,60 @@ document.querySelector("#deactivate").addEventListener("click", () => {
     document.querySelector("#myButton").removeEventListener("click", addCount);
 });
 
+//------------------------------------------------Repeat an Action at Regular Intervals-------------------------------//
+//runs the code/functions in intervals, with the length of the timeout between them
+//const intervalId = setInterval(callbackFunction, timeBetweenEachCall);
+//runs the code/function once after the timeout
+//const timeout = setTimeout(alert, timeout);
+
+//------------------------------------------------Animation with JavaScript-------------------------------------------//
+const blockElement = document.querySelector("#block");
+const blockWidth = parseFloat(getComputedStyle(blockElement).width);
+let movement = 7;
+const moveBlock = () => {
+  //convert the left position of the block to a number
+  const xBlock = parseFloat(getComputedStyle(blockElement).left);
+  // Convert the width of the frame (value of the form "XXpx") to a number
+  const xMax = parseFloat(getComputedStyle(frame).width);
+  if (xBlock + blockWidth <= xMax) {
+    // Block movement
+    blockElement.style.left = (xBlock + movement) + "px";
+    animationId = requestAnimationFrame(moveBlock);
+  }
+  else {
+    // Cancel the animation
+    cancelAnimationFrame(animationId);
+  }
+
+};
+//Chronometer (the one that counts up)
+const button = document.querySelector("#start");
+let counter = document.querySelector("#counter");
+let intervalId = null;
+let started = false;
+button.addEventListener("click", () => {
+    if (!started){
+        intervalId = setInterval(() => {
+            counter.textContent = String(Number(counter.textContent) + 1);
+        }, 1000);
+        button.textContent = "Stop";
+    } else {
+        clearInterval(intervalId);
+        button.textContent = "Start";
+    }
+    started = !started;
+});
 
 
+let animationId = requestAnimationFrame(moveBlock);
 
+//------------------------------------------The right animation technique------------------------//
+/*
+Guide:
+  - Use setInterval() if the animation isn’t in real-time and should just happen at regular intervals.
+  - Favor CSS if the animation happens in real-time and can be managed with it.
+  - Use requestAnimationFrame() for any other case.
+*/
 
 
 
