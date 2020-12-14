@@ -434,6 +434,9 @@ const todos = [
 
 const todoJSON = JSON.stringify(todos);
 console.log(todoJSON);
+
+//convert back to js object
+console.log(JSON.parse(todoJSON));
 */
 
 //---------------------------------Modifying page structure: Modify an existing element------------------------//
@@ -676,6 +679,38 @@ Guide:
   - Favor CSS if the animation happens in real-time and can be managed with it.
   - Use requestAnimationFrame() for any other case.
 */
+//------------------------------------------Promises---------------------------------------------//
+/*A promise is in one of these states:
+  - pending: initial state, not fulfilled or rejected
+  - fulfilled: meaning that the operation completed successfully
+  - rejected: meaning that the operation failed
+*/
+fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt")
+  .then(response => response.text())
+  .then(text => {console.log(text)});
+//Dealing with Errors
+/*
+fetch("http://non-existent-resource")
+  .catch(err => {
+    console.error(err.message);
+  });
+*/
+fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/languages.txt")
+  .then(response => response.text())
+  .then(text => {
+    let textArray = text.split(";");
+    textArray.forEach(programmingLanguage => {
+      const liElement = document.createElement("li");
+      liElement.appendChild(document.createTextNode(programmingLanguage));
+      //document.querySelector("#fetch").appendChild(liElement);
+    });
+  })
+  .catch(err => {
+    console.error(err.message);
+  });
+//Dealing with JSON
+
+
 
 
 
