@@ -709,7 +709,36 @@ fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/lang
     console.error(err.message);
   });
 //Dealing with JSON
+fetch("https://raw.githubusercontent.com/bpesquet/thejsway/master/resources/paintings.json")
+    .then(response => response.json())
+    .then(paintings => {
+        paintings.forEach(painting => {
+            //create tr
+            const trElement = document.createElement("tr");
+            
+            //create td
+            const tdName = document.createElement("td");
+            const tdYear = document.createElement("td");
+            const tdArtist = document.createElement("td");
 
+            //Append to td
+            tdName.appendChild(document.createTextNode(painting.name));
+            tdYear.appendChild(document.createTextNode(painting.year));
+            tdArtist.appendChild(document.createTextNode(painting.artist));
+            
+            //Append td to tr
+            trElement.appendChild(tdYear);
+            trElement.appendChild(tdName);
+            trElement.appendChild(tdArtist);
+            
+            //Append tr to table
+            document.querySelector("#paintings").appendChild(trElement);
+
+        });
+    })
+    .catch(error => {
+        console.error(error.message);
+    });
 
 
 
