@@ -4,7 +4,7 @@ const container = document.querySelector(".container"); //selects the first elem
 
 //Multiple element selectors
 const items = document.querySelectorAll(".item"); //node list; Array methods can be used on it
-items.forEach(item => console.log(item.textContent)); //Console log each item 
+//items.forEach(item => console.log(item.textContent)); //Console log each item 
 
 console.log(document.getElementsByClassName("item")); //HTMLCollection, Array methods can not be used on it. Hss to be converted to an array
 console.log(document.getElementsByTagName("h1")); //Also returns a HTMLCollection
@@ -24,7 +24,7 @@ ul.lastElementChild.innerHTML = "<h2>This text was made into an h1 by js </h2>";
 const btn = document.querySelector(".btn");
 btn.addEventListener("click", function (e) {
     //prevent the site from refreshing because of the submit element
-    e.preventDefault();
+    //e.preventDefault();
 
     const nameText = document.querySelector("#name");
     const emailText = document.querySelector("#email");
@@ -77,7 +77,12 @@ btn.addEventListener("click", function (e) {
         emailText.style.borderColor = "#ccc";
     } else {
         //Add css to the html of msg
-        msg.classList.add("error");
+        try {
+
+        }
+        catch {
+            msg.classList.add("error");
+        }
 
         //Add text to the empty html element
         msg.innerHTML = "Please enter all fields correctly";
@@ -94,6 +99,13 @@ function validateEmail(emailText) {
     emailText.style.borderColor = "#ff0033";
     return (false);
 }
+
+form.addEventListener("submit", e => {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    console.info(formData);
+});
 
 
 
