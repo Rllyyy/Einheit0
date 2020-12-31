@@ -62,8 +62,34 @@ app.post("/animals", upload.array(), (request, response) => {
 app.post("/api/cars", jsonParser, (request, response) => {
   const cars = request.body;
   response.send(`You sent me a list of cars: ${JSON.stringify(cars)}`);
-    });
+});
 
+// Return HTML content for request to "/hello"
+app.get("/hello", (request, response) => {
+  const htmlContent = `<!doctype html>
+  <html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello web page</title>
+  </head>
+  <body> 
+    <h1>Hello!</h1>
+    <h2>This page was returned by </h2>
+  </body>
+  </html>`;
+  response.send(htmlContent);
+});
+
+let options = {
+};
+
+app.use(express.static("public", options));
+
+// Return HTML content from a html document
+app.get("/hello2", (request, response) => {
+  response.sendFile(`${__dirname}/views/hello2.html`);
+  
+});
 
 //Enable CORS
 app.use((req, res, next)  => {
