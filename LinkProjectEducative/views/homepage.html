@@ -5,15 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
         <link rel="stylesheet" type="text/css" href="style.css">
+        <script src="app.js" defer></script>
     </head>
     <body>
         <div id="content">
             <div id="submitGroupElement">
-                <span class="left">Logo</span>
-                <span class="left">picture</span>
-                <span class="left">Button</span>
-                <span id="love">Created with love and JavaScript</span>
+                <img class="left" id="linkPic" src="linkPic.png" alt="link licture">
+                <span class="left" id="PubLink">PubLink</span>
+                <button class="left" id="btn">Submit</button>
+                <span id="love">Built with ❤️ and JavaScript</span>
             </div>
+            <div id="linkSuccess">
+                <span id="spanLinkSuccess">The link <span linkName>Wikipedia</span> has been successfully added!</span>
+            </div>
+            <form id="linkInformation">
+                <input class="inputLinkInfo" type="text" placeholder="Name">
+                <input class="inputLinkInfo" type="text" placeholder="Website Name">
+                <input class="inputLinkInfo" type="link" placeholder="website.com">
+                <button id="buttonLinkInfo">Add link</button>
+            </form>
             <div id="results">
                 <div class="groupElement">
                     <span class="linkName">Reddit</span>
