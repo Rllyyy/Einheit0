@@ -1,40 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <script src="app.js" defer></script>
-    </head>
-    <body>
-        <div id="content">
-            <div id="submitGroupElement">
-                <img class="left" id="linkPic" src="linkPic.png" alt="link licture">
-                <span class="left" id="PubLink">PubLink</span>
-                <button class="left" id="btn">Submit</button>
-                <span id="love">Built with ❤️ and JavaScript</span>
-            </div>
-            <div id="linkSuccess">
-                <span id="spanLinkSuccess">The link <span linkName>Wikipedia</span> has been successfully added!</span>
-            </div>
-            <form id="linkInformation">
-                <input class="inputLinkInfo" type="text" placeholder="Name">
-                <input class="inputLinkInfo" type="text" placeholder="Website Name">
-                <input class="inputLinkInfo" type="link" placeholder="website.com">
-                <button id="buttonLinkInfo">Add link</button>
-            </form>
-            <div id="results">
-                <div class="groupElement">
-                    <span class="linkName">Reddit</span>
-                    <a href="test.com">https://reddit.com</a>
-                    <span class="submittedName">Submitted by</span>
-                </div>
-                <div class="groupElement">
-                    
-                </div>
-            </div>
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <div id="content">
+      <div id="submitGroupElement">
+        <img class="left" id="linkPic" src="linkPic.png" alt="link picture" />
+        <span class="left" id="PubLink">PubLink</span>
+        <button class="left" id="btn">Submit</button>
+        <span id="love">Built with ❤️ and JavaScript</span>
+      </div>
+      <form id="linkInformation">
+        <input class="inputLinkInfo" type="text" placeholder="Name" value="Niklas" name="author" required />
+        <input class="inputLinkInfo" type="text" placeholder="Website Name" value="Website" name="websiteName" required />
+        <input class="inputLinkInfo" type="link" placeholder="website.com" value="https://website.com" name="url" required />
+        <button id="buttonLinkInfo" type="submit">Add link</button>
+      </form>
+      <div id="linkSuccess">
+        <span id="spanLinkSuccess">The link <span linkName>Wikipedia</span> has been successfully added!</span>
+      </div>
+      <div id="results">
+        <!-- 
+        <div class="groupElement">
+            <span class="linkName">Reddit</span>
+            <a href="test.com">https://reddit.com</a>
+            <span class="submittedName">Submitted by</span>
         </div>
-    </body>
+        -->
+      </div>
+    </div>
+  </body>
 </html>

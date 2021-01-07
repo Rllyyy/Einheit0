@@ -37,14 +37,14 @@ const articles = [
 
 //Return a string for request to the root URL ("/")
 app.get("/", (request, response) => {
-    response.send("Hello from Express! This is the root!");
+  response.send("Hello from Express! This is the root!");
 });
 
 //Redirect to the basic url
 app.get("/old", (request, response) => {
   response.redirect(301, "/");
 })
-  
+
 // Return the articles list in JSON format
 //http://localhost:3000/api/articles
 app.get("/api/articles", (request, response) => {
@@ -88,17 +88,17 @@ app.use(express.static("public", options));
 // Return HTML content from a html document
 app.get("/hello2", (request, response) => {
   response.sendFile(`${__dirname}/views/hello2.html`);
-  
+
 });
 
 //Enable CORS
-app.use((req, res, next)  => {
-    res.header("Access-Control-Allow-Origin", "*");
-    res.header(
-        "Access-Control-Allow-Headers",
-        "Origin, X-Requested-With, Content-Type, Accept"
-    );
-    next();
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept"
+  );
+  next();
 });
 
 //Start listening to incoming requests
