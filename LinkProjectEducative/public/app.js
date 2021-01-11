@@ -30,40 +30,56 @@ const createLinkElement = (author, websiteName, url, end) => {
         results.insertBefore(divElement, results.childNodes[0]);
     }
 
-    
 }
 
 document.querySelector("form").addEventListener("submit", (e) => {
     e.preventDefault();
-
-    //Assign Values to 
     const formData = new FormData(e.target);
     
     //Push to API by post method
     fetch("http://localhost:3000/links", {
         method: "POST", 
         body: formData
-    })/*
-    .then(response => response.json())
-    .then(newLink => {
-    })*/
+    })
     .catch(err => {
         console.error(err.message);
       });
 
     //Create Element locally
     createLinkElement(formData.get("author"), formData.get("websiteName"), formData.get("url"), false);
+    addLinkSuccess(formData.get("websiteName"));
     
 });
+
+//
+function addLinkSuccess(websiteName) {
+    const linkInformationElement = document.querySelector("#linkInformation");
+    //Delete all child elements of link Information
+    linkInformationElement.textContent = "";
+
+    //Add linkSuccess Message
+    const linkSuccessDiv = document.createElement("div");
+    linkSuccessDiv.id = "linkSuccess";
+
+    const linkSuccessSpan = document.createElement("span");
+    linkSuccessSpan.id = "spanLinkSuccess";
+    linkSuccessSpan.appendChild(document.createTextNode(`The link ${websiteName} has been successfully added!`));
+
+    linkSuccessDiv.appendChild(linkSuccessSpan);
+    linkInformationElement.appendChild(linkSuccessDiv);
+    linkInformationElement.style.visibility = "visible";
+    
+    //remove the notification after 2000ms
+    setTimeout(()=> {
+        linkInformationElement.style.visibility = "hidden";
+    }, 2000)
+}
 
 //Submit Button makes the linkInformation visible
 document.getElementById("btn").addEventListener("click", (e) => {
     const linkInformation = document.querySelector("#linkInformation");
-    linkInformation.style.display = "flex";
+    linkInformation.style.visibility = "visible";
 });
-
-
-
 
 //Fetch the data from the server
 fetch("http://localhost:3000/api/links")
