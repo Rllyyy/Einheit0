@@ -105,7 +105,7 @@ button {
   width: 100%;
   background-color: none;
   height: 40px;
-  display: none;
+  visibility: hidden;
 }
 
 .inputLinkInfo {
@@ -149,6 +149,7 @@ button {
 }
 
 #spanLinkSuccess {
+  width: 100%;
   color: darkgreen;
   font-size: 1rem;
   margin-left: 10px;
